@@ -10,6 +10,8 @@ public class Logic : MonoBehaviour
     public Text wallet;
     public int drugstash;
     public Text canabis;
+    public Transform Camera;
+    public Transform make_stuff_spot;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,6 @@ public class Logic : MonoBehaviour
     }
     public void make_drugs()
     {
-        drugstash = drugstash + 1;
+        transform.position = make_stuff_spot.position;
     }
 }

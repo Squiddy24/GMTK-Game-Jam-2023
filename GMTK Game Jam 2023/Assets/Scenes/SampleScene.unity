@@ -385,6 +385,8 @@ MonoBehaviour:
   wallet: {fileID: 505633506}
   drugstash: 0
   canabis: {fileID: 1027400729}
+  Camera: {fileID: 1895675559}
+  make_stuff_spot: {fileID: 836385840}
 --- !u!1 &836385839
 GameObject:
   m_ObjectHideFlags: 0
