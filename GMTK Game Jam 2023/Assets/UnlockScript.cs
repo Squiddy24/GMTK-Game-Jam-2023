@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UnlockScript : MonoBehaviour
 {
-    public int CurrentLevel;
     public int LevelThreshold;
     public SpriteRenderer spriteRender;
 
@@ -17,7 +16,7 @@ public class UnlockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CurrentLevel >= LevelThreshold)
+        if (UnlocksManager.Level >= LevelThreshold)
         {
             spriteRender.color = new Color32(255, 255, 255, 255);
         }
