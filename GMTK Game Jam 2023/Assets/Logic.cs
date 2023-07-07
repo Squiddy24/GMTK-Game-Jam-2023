@@ -12,6 +12,8 @@ public class Logic : MonoBehaviour
     public Text canabis;
     public Transform Camera;
     public Transform make_stuff_spot;
+    public GameObject main_UI;
+    public GameObject drug_making_UI;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class Logic : MonoBehaviour
     void Update()
     {
         wallet.text = cash_money.ToString();
-        canabis.text = drugstash.ToString(); 
+        canabis.text = drugstash.ToString();
     }
     public void sell()
     {
@@ -35,6 +37,12 @@ public class Logic : MonoBehaviour
     }
     public void make_drugs()
     {
+        main_UI.SetActive(false);
         transform.position = make_stuff_spot.position;
+        drug_making_UI.SetActive(true);
+    }
+    public void furnace()
+    {
+
     }
 }
