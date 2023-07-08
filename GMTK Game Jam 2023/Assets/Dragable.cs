@@ -6,6 +6,7 @@ public class Dragable : MonoBehaviour
 {
     public Transform self;
     public bool Draging = false;
+    private Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
@@ -16,23 +17,25 @@ public class Dragable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {     
-           Draging = true;
-           self.localScale += new Vector3(0.5f, 0.5f, 0);
-
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            Draging = false;
-            self.localScale -= new Vector3(0.5f, 0.5f, 0);
-
-        }
-
+    
         if (Draging)
         {
             self.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
+    }
+
+    private void OnMouseDown()
+    {
+        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Draging = true;
+        self.localScale += new Vector3(0.5f, 0.5f, 0);
+
+    }
+
+    private void OnMouseUp()
+    {
+        Draging = false;
+        self.localScale -= new Vector3(0.5f, 0.5f, 0);
     }
 }
