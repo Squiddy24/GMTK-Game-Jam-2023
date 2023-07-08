@@ -17,11 +17,11 @@ public class Dragable : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
-            Draging = true;
-            self.localScale += new Vector3(0.5f, 0.5f, 0);
+        {     
+           Draging = true;
+           self.localScale += new Vector3(0.5f, 0.5f, 0);
+
         }
-        
         if (Input.GetMouseButtonUp(0))
         {
             Draging = false;
