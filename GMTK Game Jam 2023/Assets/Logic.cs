@@ -12,6 +12,7 @@ public class Logic : MonoBehaviour
     public Text canabis;
     public Transform Camera;
     public Transform make_stuff_spot;
+    public GameObject Main_UI;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +37,6 @@ public class Logic : MonoBehaviour
     public void make_drugs()
     {
         transform.position = make_stuff_spot.position;
+        Main_UI.SetActive(false);
     }
 }
